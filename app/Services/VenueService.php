@@ -9,19 +9,23 @@ class VenueService implements VenueServiceInterface
 {
 
   private string $api_url;
-  private string $api_key;
+  private string $auth_token;
 
-  public function __construct() {
-    $this->api_url = env('WEATHER_MAP_API_URL');
-    $this->api_key = env('WEATHER_MAP_API_KEY');
+  public function __construct() 
+  {
+    $this->api_url = env('FOURSQUARE_API_URL');
+    $this->auth_token = env('FOURSQUARE_AUTH_TOKEN');
   }
   
-  public function search( string $data )
+  public function search(string $near_city)
   {
-    // $data = Http::get($this->api_url . '/weather', [
-    //   'q' => 'Tokyo',
-    //   'appid' => $this->api_key,
-    // ]);
-    // return $data;
+    $request = Http::withHeaders([
+      'Authorization' => $this->auth_token,
+    ])->get($this->api_url . '/places/search', [
+      'near' => $near_city,
+      'limit' => 5,
+      'v' => 20240604,
+    ]);
+    return $request;
   }
 }
