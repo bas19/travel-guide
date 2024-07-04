@@ -19,7 +19,7 @@ class ForecastService implements ForecastServiceInterface
   public function get_by_city( string $city )
   {
     $data = Http::get($this->api_url . '/weather', [
-      'q' => 'Tokyo',
+      'q' => $city,
       'appid' => $this->api_key,
     ]);
     return $data;
