@@ -86,10 +86,10 @@ const closeModal = () => {
             </p>
             <div>
                 <ul>
-                    <li class="bg-red-200" v-for="place in cityNearbyPlaces">
+                    <li class="bg-gray-100" v-for="place in cityNearbyPlaces">
                         <div class="my-2 p-2 border-y border-inherit">
-                            <p>Name: {{ place.name }}</p>
-                            <p>Address: {{ place.location.address }}</p>
+                            <p class="text-sm">Name: <span class="font-bold">{{ place.name }}</span></p>
+                            <p class="text-sm">Address: {{ place.location.address }}</p>
                             <!-- <div class="pa-4" v-for="item in place.related_places.children">
                                 <img class="mb-4" :src="item.categories[0].icon.prefix + '32.png'" />
                                 {{ item.name }} -->
