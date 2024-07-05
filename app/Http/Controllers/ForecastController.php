@@ -15,7 +15,7 @@ class ForecastController extends Controller
         $this->service = $service;
     }
 
-    public function get_data_by_city(Request $request, string $city)
+    public function get_data_by_city(string $city)
     {
         $data = $this->service->get_by_city($city);
         return $data;
