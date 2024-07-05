@@ -1,13 +1,8 @@
 ## Travel App
 
-A simple application as travel guide for Japan.
-The codebase setup is like a monolithic application but is uses a backend API
-to support other single page application in future.
+A simple travel guide application. The codebase setup is like a monolithic but it uses a backend API to support other single page applications in the future. It uses a service pattern to cater to other third-party API.
 
-It uses a service pattern to cater other third party API provider in the future.
-
-The frontend UI is built in VueJS.
-The UI is a simple one but with a modal popup for information.
+The frontend UI is built on VueJS.The UI is a simple one but with a modal popup for information.
 It is responsive and easy to use.
 
 ## Steps to run the app via CLI
