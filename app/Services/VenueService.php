@@ -7,7 +7,6 @@ use App\Interfaces\VenueServiceInterface;
 
 class VenueService implements VenueServiceInterface
 {
-
   private string $api_url;
   private string $auth_token;
 
@@ -17,7 +16,7 @@ class VenueService implements VenueServiceInterface
     $this->auth_token = env('FOURSQUARE_AUTH_TOKEN');
   }
   
-  public function search($data)
+  public function search(array $data)
   {
     $request = Http::withHeaders([
       'Authorization' => $this->auth_token,

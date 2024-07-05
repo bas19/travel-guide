@@ -15,7 +15,7 @@ class VenueController extends Controller
         $this->service = $service;
     }
 
-    public function get_places_by_city(Request $request) 
+    public function get_places_by_city(Request $request)
     {
         $data = $this->service->search($request->all());
         return $data;

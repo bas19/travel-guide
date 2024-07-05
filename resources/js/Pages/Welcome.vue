@@ -1,8 +1,8 @@
 <script setup>
 import SecondaryButton from '@/Components/SecondaryButton.vue';
 import Modal from '@/Components/Modal.vue';
-import { Head, Link } from '@inertiajs/vue3';
-import {onMounted, ref} from 'vue';
+import { Head } from '@inertiajs/vue3';
+import {ref} from 'vue';
 import axios from 'axios';
 
 const infoModal = ref(false);
@@ -43,23 +43,21 @@ let cities = ref([
 let cityForecastData = ref(null);
 let cityNearbyPlaces = ref([]);
 
-function getForecastData(city) {
-    let result = axios.get('/api/forecast/' + city).catch((error) => console.log(error));
-    return result
+async function getForecastData(city) {
+    let result = await axios.get('/api/forecast/' + city).catch((error) => console.log(error));
+    return result;
 }
 
-function getNearbyPlaces(city) {
+async function getNearbyPlaces(city) {
     let result = axios.get('/api/venue/search?limit=5&near=' + city).catch((error) => console.log(error));
-    return result
+    return result;
 }
 
 const showInfoModal = async (city) => {
     const forecastResult = await getForecastData(city);
-    cityForecastData = forecastResult.data
-    console.log('data', cityForecastData);
     const placesResult = await getNearbyPlaces(city);
+    cityForecastData = forecastResult.data;
     cityNearbyPlaces = placesResult.data.results;
-    console.log('places', cityNearbyPlaces);
     infoModal.value = true;
 };
 const closeModal = () => {
@@ -68,7 +66,6 @@ const closeModal = () => {
 </script>
 
 <template>
-
     <Modal :show="infoModal" @close="closeModal">
         <div class="p-6">
             <div class="flex justify-end">
@@ -103,7 +100,6 @@ const closeModal = () => {
             </div>
         </div>
     </Modal>
-        
     <Head title="Welcome" />
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
         <img

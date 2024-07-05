@@ -7,7 +7,6 @@ use App\Interfaces\ForecastServiceInterface;
 
 class ForecastService implements ForecastServiceInterface
 {
-
   private string $api_url;
   private string $api_key;
 
