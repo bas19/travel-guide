@@ -17,8 +17,7 @@ class VenueController extends Controller
 
     public function get_places_by_city(Request $request) 
     {
-        $near_city = $request->input('near');
-        $data = $this->service->search($near_city);
+        $data = $this->service->search($request->all());
         return $data;
     }
 }

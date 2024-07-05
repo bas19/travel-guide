@@ -17,13 +17,13 @@ class VenueService implements VenueServiceInterface
     $this->auth_token = env('FOURSQUARE_AUTH_TOKEN');
   }
   
-  public function search(string $near_city)
+  public function search($data)
   {
     $request = Http::withHeaders([
       'Authorization' => $this->auth_token,
     ])->get($this->api_url . '/places/search', [
-      'near' => $near_city,
-      'limit' => 5,
+      'near' => $data['near'],
+      'limit' => $data['limit'],
       'v' => 20240604,
     ]);
     return $request;

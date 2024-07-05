@@ -4,5 +4,5 @@ namespace App\Interfaces;
 
 interface VenueServiceInterface
 {
-  public function search(string $city);
+  public function search(array $data);
 }

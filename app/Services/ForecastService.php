@@ -22,6 +22,7 @@ class ForecastService implements ForecastServiceInterface
     $data = Http::get($this->api_url . '/weather', [
       'q' => $city,
       'appid' => $this->api_key,
+      'units' => 'metric',
     ]);
     return $data;
   }
