@@ -1,6 +1,6 @@
 ## Travel App
 
-A simple travel guide application. The codebase setup is like a monolithic but it uses a backend API to support other single page applications in the future. It uses a service pattern to cater to other third-party API.
+A simple travel guide application. The codebase setup is like a monolithic but it uses a backend API to support other single page applications in the future. It uses a service pattern for flexibility.
 
 The frontend UI is built on VueJS, it is a simple one with a modal popup for information.
 It is responsive and easy to use.
