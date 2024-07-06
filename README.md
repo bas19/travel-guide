@@ -7,8 +7,9 @@ It is responsive and easy to use.
 
 ## Steps to run the app via CLI
 
-1. composer install
-2. npm install
-3. php artisan migrate
-4. php artisan serve
-5. npm run dev
+1. rename .env.example to .env
+2. composer install
+3. php artisan key:generate
+4. php artisan migrate
+5. npm install
+6. npm run build
