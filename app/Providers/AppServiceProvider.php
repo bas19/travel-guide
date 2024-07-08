@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use App\Interfaces\ForecastServiceInterface;
 use App\Interfaces\VenueServiceInterface;
 use App\Services\ForecastService;
 use App\Services\VenueService;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

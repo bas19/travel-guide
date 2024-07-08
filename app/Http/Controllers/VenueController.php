@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Interfaces\VenueServiceInterface;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class VenueController extends Controller
 {
     private VenueServiceInterface $service;
 
-    public function __construct(VenueServiceInterface $service) 
+    public function __construct(VenueServiceInterface $service)
     {
         $this->service = $service;
     }
@@ -18,6 +17,7 @@ class VenueController extends Controller
     public function get_places_by_city(Request $request)
     {
         $data = $this->service->search($request->all());
+
         return $data;
     }
 }
